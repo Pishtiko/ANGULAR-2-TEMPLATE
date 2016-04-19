@@ -17,7 +17,6 @@ export class NewContactComponent{
     private _router : Router,
     private _formBuilder : FormBuilder)
   {
-    //initialize newContact to empty object
     this.myForm = this._formBuilder.group({
       //This should match with Contact.ts object
       'id'          : [Math.floor((Math.random() * 100) + 1).toString()],
@@ -26,7 +25,7 @@ export class NewContactComponent{
       'email'       : ['']
     });
   }
-  
+
   onAddContact(value){
     if(this.myForm.dirty && this.myForm.valid)
       this._contactService.insertContact(value);
