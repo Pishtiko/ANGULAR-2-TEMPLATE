@@ -49,7 +49,7 @@ System.register(["angular2/core", "angular2/router", "../contacts/contact.servic
                         selector: 'about',
                         providers: [contact_service_1.ContactService],
                         directives: [router_1.ROUTER_DIRECTIVES],
-                        templateUrl: '../dev/about/about.component.html'
+                        templateUrl: '../dev/about/templates/about.component.html'
                     }), 
                     __metadata('design:paramtypes', [contact_service_1.ContactService, router_1.Router, router_1.RouteParams])
                 ], AboutComponent);

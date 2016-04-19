@@ -7,7 +7,7 @@ import {Contact} from "../contacts/contact";
   selector:'about',
   providers:[ContactService],
   directives: [ROUTER_DIRECTIVES],
-  templateUrl:'../dev/about/about.component.html'
+  templateUrl:'../dev/about/templates/about.component.html'
 })
 export class AboutComponent{
 
