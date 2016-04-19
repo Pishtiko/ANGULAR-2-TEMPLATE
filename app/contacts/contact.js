@@ -1,1 +1,10 @@
-System.register([],function(e){return{setters:[],execute:function(){}}});
+System.register([], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
+    return {
+        setters:[],
+        execute: function() {
+        }
+    }
+});
+//# sourceMappingURL=contact.js.map

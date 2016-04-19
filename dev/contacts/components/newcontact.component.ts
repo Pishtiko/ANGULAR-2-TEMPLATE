@@ -1,12 +1,12 @@
-import {Component}                                        from "angular2/core";
-import {ContactService}                                         from "./contact.service";
+import {Component}                                              from "angular2/core";
+import {ContactService}                                         from "./../contact.service";
 import {Router}                                                 from 'angular2/router';
-import {Contact}                                                from './contact';
+import {Contact}                                                from './../contact';
 import {FORM_PROVIDERS, ControlGroup, Validators, FormBuilder}  from 'angular2/common';
 
 
 @Component({
-  templateUrl:'dev/contacts/newcontact.component.html',
+  templateUrl:'dev/contacts/templates/newcontact.component.html',
   providers:[ContactService],
   styles:[`
       .ng-invalid{

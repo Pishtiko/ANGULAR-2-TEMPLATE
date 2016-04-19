@@ -20,13 +20,13 @@
     <script>
         System.config({
             packages: {
-                'dev': {
+                'app': {
                     format: 'register',
                     defaultExtension: 'js'
                 },
             },
         });
-        System.import('dev/boot')
+        System.import('app/boot')
                 .then(null, console.error.bind(console));
     </script>
     <link rel="stylesheet" href="src/css/app.css">

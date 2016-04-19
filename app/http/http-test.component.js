@@ -1,1 +1,57 @@
-System.register(["angular2/core","./http-test.service"],function(t){var e,n,o,r=this&&this.__decorate||function(t,e,n,o){var r,i=arguments.length,s=3>i?e:null===o?o=Object.getOwnPropertyDescriptor(e,n):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,n,o);else for(var c=t.length-1;c>=0;c--)(r=t[c])&&(s=(3>i?r(s):i>3?r(e,n,s):r(e,n))||s);return i>3&&s&&Object.defineProperty(e,n,s),s},i=this&&this.__metadata||function(t,e){return"object"==typeof Reflect&&"function"==typeof Reflect.metadata?Reflect.metadata(t,e):void 0};return{setters:[function(t){e=t},function(t){n=t}],execute:function(){o=function(){function t(t){this._httpService=t}return t.prototype.onGet=function(){var t=this;console.log("Getting user now."),this._httpService.getUser().subscribe(function(e){return t.getData=JSON.stringify(e)},function(t){return alert(t)},function(){return console.log("Finished Get")})},t.prototype.onPromiseGet=function(){var t=this;console.log("Getting user based on promise now."),this._httpService.getUsersByPromise().then(function(e){return t.getPromiseData=JSON.stringify(e)},function(t){return alert(t)})},t.prototype.onPost=function(){var t=this;this._httpService.postJson().subscribe(function(e){return t.postData=JSON.stringify(e)},function(t){return alert(t)},function(){return console.log("Finished Post")})},t=r([e.Component({selector:"http-test",template:'\n    <button (click)="onGet()">Get Data</button><br/>\n    <div>Output:{{getData}}</div><br/>\n    <button (click) = "onPost()">Post Data</button><br/>\n    <div>Output:{{postData}}</div><br/>\n    <button (click) = "onPromiseGet()">Get Data(w Promise)</button><br/>\n    <div>Output:{{getPromiseData}}</div><br/>\n  ',providers:[n.HTTPTestService]}),i("design:paramtypes",[n.HTTPTestService])],t)}(),t("HTTPTestComponent",o)}}});
+System.register(['angular2/core', './http-test.service'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
+    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+    var __metadata = (this && this.__metadata) || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+    var core_1, http_test_service_1;
+    var HTTPTestComponent;
+    return {
+        setters:[
+            function (core_1_1) {
+                core_1 = core_1_1;
+            },
+            function (http_test_service_1_1) {
+                http_test_service_1 = http_test_service_1_1;
+            }],
+        execute: function() {
+            HTTPTestComponent = (function () {
+                function HTTPTestComponent(_httpService) {
+                    this._httpService = _httpService;
+                }
+                HTTPTestComponent.prototype.onGet = function () {
+                    var _this = this;
+                    console.log('Getting user now.');
+                    this._httpService.getUser().subscribe(function (data) { return _this.getData = JSON.stringify(data); }, function (error) { return alert(error); }, function () { return console.log('Finished Get'); });
+                };
+                HTTPTestComponent.prototype.onPromiseGet = function () {
+                    var _this = this;
+                    console.log('Getting user based on promise now.');
+                    this._httpService.getUsersByPromise()
+                        .then(function (res) { return _this.getPromiseData = JSON.stringify(res); }, function (err) { return alert(err); });
+                };
+                HTTPTestComponent.prototype.onPost = function () {
+                    var _this = this;
+                    this._httpService.postJson().subscribe(function (data) { return _this.postData = JSON.stringify(data); }, function (error) { return alert(error); }, function () { return console.log('Finished Post'); });
+                };
+                HTTPTestComponent = __decorate([
+                    core_1.Component({
+                        selector: 'http-test',
+                        template: "\n    <button (click)=\"onGet()\">Get Data</button><br/>\n    <div>Output:{{getData}}</div><br/>\n    <button (click) = \"onPost()\">Post Data</button><br/>\n    <div>Output:{{postData}}</div><br/>\n    <button (click) = \"onPromiseGet()\">Get Data(w Promise)</button><br/>\n    <div>Output:{{getPromiseData}}</div><br/>\n  ",
+                        providers: [http_test_service_1.HTTPTestService]
+                    }), 
+                    __metadata('design:paramtypes', [http_test_service_1.HTTPTestService])
+                ], HTTPTestComponent);
+                return HTTPTestComponent;
+            }());
+            exports_1("HTTPTestComponent", HTTPTestComponent);
+        }
+    }
+});
+//# sourceMappingURL=http-test.component.js.map

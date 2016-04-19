@@ -1,10 +1,10 @@
 import {Component} from "angular2/core";
 import {Router} from "angular2/router";
-import {Contact} from "./contact";
+import {Contact} from "./../contact";
 
 @Component({
   selector: "contact",
-  templateUrl: "dev/contacts/contact.component.html",
+  templateUrl: "dev/contacts/templates/contact.component.html",
   inputs:["contact"]
 })
 export class ContactComponent{

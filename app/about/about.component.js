@@ -1,1 +1,62 @@
-System.register(["angular2/core","angular2/router","../contacts/contact.service"],function(t){var e,o,n,c,r=this&&this.__decorate||function(t,e,o,n){var c,r=arguments.length,i=3>r?e:null===n?n=Object.getOwnPropertyDescriptor(e,o):n;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)i=Reflect.decorate(t,e,o,n);else for(var a=t.length-1;a>=0;a--)(c=t[a])&&(i=(3>r?c(i):r>3?c(e,o,i):c(e,o))||i);return r>3&&i&&Object.defineProperty(e,o,i),i},i=this&&this.__metadata||function(t,e){return"object"==typeof Reflect&&"function"==typeof Reflect.metadata?Reflect.metadata(t,e):void 0};return{setters:[function(t){e=t},function(t){o=t},function(t){n=t}],execute:function(){c=function(){function t(t,e,o){this._contactService=t,this._router=e,this._routeParams=o,this._contact=null,this.id=null}return t.prototype.ngOnInit=function(){var t=this;this.id=this._routeParams.get("contactid"),this._contactService.getContactById(this.id).then(function(e){e&&(console.log("About"),console.log(e),t._contact=e)})},t=r([e.Component({selector:"about",providers:[n.ContactService],directives:[o.ROUTER_DIRECTIVES],templateUrl:"../dev/about/about.component.html"}),i("design:paramtypes",[n.ContactService,o.Router,o.RouteParams])],t)}(),t("AboutComponent",c)}}});
+System.register(["angular2/core", "angular2/router", "../contacts/contact.service"], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
+    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+    var __metadata = (this && this.__metadata) || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+    var core_1, router_1, contact_service_1;
+    var AboutComponent;
+    return {
+        setters:[
+            function (core_1_1) {
+                core_1 = core_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
+            },
+            function (contact_service_1_1) {
+                contact_service_1 = contact_service_1_1;
+            }],
+        execute: function() {
+            AboutComponent = (function () {
+                function AboutComponent(_contactService, _router, _routeParams) {
+                    this._contactService = _contactService;
+                    this._router = _router;
+                    this._routeParams = _routeParams;
+                    this._contact = null;
+                    this.id = null;
+                }
+                //OnInit is best place to fetch all our route params.
+                AboutComponent.prototype.ngOnInit = function () {
+                    var _this = this;
+                    this.id = this._routeParams.get('contactid');
+                    this._contactService.getContactById(this.id).then(function (lContact) {
+                        if (lContact) {
+                            console.log("About");
+                            console.log(lContact);
+                            _this._contact = lContact;
+                        }
+                    });
+                };
+                AboutComponent = __decorate([
+                    core_1.Component({
+                        selector: 'about',
+                        providers: [contact_service_1.ContactService],
+                        directives: [router_1.ROUTER_DIRECTIVES],
+                        templateUrl: '../dev/about/about.component.html'
+                    }), 
+                    __metadata('design:paramtypes', [contact_service_1.ContactService, router_1.Router, router_1.RouteParams])
+                ], AboutComponent);
+                return AboutComponent;
+            }());
+            exports_1("AboutComponent", AboutComponent);
+        }
+    }
+});
+//# sourceMappingURL=about.component.js.map

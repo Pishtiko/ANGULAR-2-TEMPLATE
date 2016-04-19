@@ -1,12 +1,12 @@
 import {Component} from "angular2/core";
 import {OnInit} from "angular2/core";
 import {ContactComponent} from "./contact.component";
-import {ContactService} from "./contact.service";
-import {Contact} from "./contact";
+import {ContactService} from "./../contact.service";
+import {Contact} from "./../contact";
 
 @Component({
   selector: "contact-list",
-  templateUrl: "dev/contacts/contact-list.component.html",
+  templateUrl: "dev/contacts/templates/contact-list.component.html",
   directives: [ContactComponent],
   providers:[ContactService],
   styleUrls:["../src/css/app.css"]

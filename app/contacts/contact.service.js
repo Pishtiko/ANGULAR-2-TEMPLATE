@@ -1,1 +1,47 @@
-System.register(["angular2/core","./data"],function(t){var e,n,o,r=this&&this.__decorate||function(t,e,n,o){var r,c=arguments.length,i=3>c?e:null===o?o=Object.getOwnPropertyDescriptor(e,n):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)i=Reflect.decorate(t,e,n,o);else for(var f=t.length-1;f>=0;f--)(r=t[f])&&(i=(3>c?r(i):c>3?r(e,n,i):r(e,n))||i);return c>3&&i&&Object.defineProperty(e,n,i),i},c=this&&this.__metadata||function(t,e){return"object"==typeof Reflect&&"function"==typeof Reflect.metadata?Reflect.metadata(t,e):void 0};return{setters:[function(t){e=t},function(t){n=t}],execute:function(){o=function(){function t(){}return t.prototype.getContacts=function(){return Promise.resolve(n.CONTACTS)},t.prototype.getContactById=function(t){return Promise.resolve(n.CONTACTS.find(function(e){return e.id==t}))},t.prototype.insertContact=function(t){Promise.resolve(n.CONTACTS).then(function(e){return e.push(t)})},t=r([e.Injectable(),c("design:paramtypes",[])],t)}(),t("ContactService",o)}}});
+System.register(["angular2/core", "./mocks/data"], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
+    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+    var __metadata = (this && this.__metadata) || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+    var core_1, data_1;
+    var ContactService;
+    return {
+        setters:[
+            function (core_1_1) {
+                core_1 = core_1_1;
+            },
+            function (data_1_1) {
+                data_1 = data_1_1;
+            }],
+        execute: function() {
+            ContactService = (function () {
+                function ContactService() {
+                }
+                ContactService.prototype.getContacts = function () {
+                    return Promise.resolve(data_1.CONTACTS);
+                };
+                ContactService.prototype.getContactById = function (id) {
+                    return Promise.resolve(data_1.CONTACTS.find(function (x) { return x.id == id; }));
+                };
+                ContactService.prototype.insertContact = function (contact) {
+                    Promise.resolve(data_1.CONTACTS)
+                        .then(function (contacts) { return contacts.push(contact); });
+                };
+                ContactService = __decorate([
+                    core_1.Injectable(), 
+                    __metadata('design:paramtypes', [])
+                ], ContactService);
+                return ContactService;
+            }());
+            exports_1("ContactService", ContactService);
+        }
+    }
+});
+//# sourceMappingURL=contact.service.js.map

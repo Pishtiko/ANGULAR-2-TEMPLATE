@@ -1,1 +1,66 @@
-System.register(["angular2/core","angular2/http","rxjs/add/operator/map","rxjs/Rx"],function(t){var e,n,o,r,c=this&&this.__decorate||function(t,e,n,o){var r,c=arguments.length,i=3>c?e:null===o?o=Object.getOwnPropertyDescriptor(e,n):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)i=Reflect.decorate(t,e,n,o);else for(var s=t.length-1;s>=0;s--)(r=t[s])&&(i=(3>c?r(i):c>3?r(e,n,i):r(e,n))||i);return c>3&&i&&Object.defineProperty(e,n,i),i},i=this&&this.__metadata||function(t,e){return"object"==typeof Reflect&&"function"==typeof Reflect.metadata?Reflect.metadata(t,e):void 0};return{setters:[function(t){e=t},function(t){n=t,o=t},function(t){},function(t){}],execute:function(){r=function(){function t(t){this._http=t}return t.prototype.getUser=function(){return this._http.get("http://jsonplaceholder.typicode.com/users/1").map(function(t){return t.json()})},t.prototype.postJson=function(){var t=JSON.stringify({title:"foo",body:"bar",userId:1}),e="data="+t,n=new o.Headers;return n.append("Content-type","application/x-www-form-urlencoded"),this._http.post("http://jsonplaceholder.typicode.com/posts",e,{headers:n}).map(function(t){return t.json()})},t.prototype.getUsersByPromise=function(){return this._http.get("http://jsonplaceholder.typicode.com/users").toPromise().then(function(t){return t.json()})},t=c([e.Injectable(),i("design:paramtypes",[n.Http])],t)}(),t("HTTPTestService",r)}}});
+System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map', 'rxjs/Rx'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
+    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+    var __metadata = (this && this.__metadata) || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+    var core_1, http_1, http_2;
+    var HTTPTestService;
+    return {
+        setters:[
+            function (core_1_1) {
+                core_1 = core_1_1;
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
+                http_2 = http_1_1;
+            },
+            function (_1) {},
+            function (_2) {}],
+        execute: function() {
+            HTTPTestService = (function () {
+                function HTTPTestService(_http) {
+                    this._http = _http;
+                }
+                HTTPTestService.prototype.getUser = function () {
+                    return this._http.get("http://jsonplaceholder.typicode.com/users/1")
+                        .map(function (res) { return res.json(); });
+                };
+                ;
+                HTTPTestService.prototype.postJson = function () {
+                    var json = JSON.stringify({
+                        title: 'foo',
+                        body: 'bar',
+                        userId: 1
+                    });
+                    var params = 'data=' + json;
+                    var header = new http_2.Headers();
+                    header.append('Content-type', 'application/x-www-form-urlencoded');
+                    return this._http.post("http://jsonplaceholder.typicode.com/posts", params, {
+                        headers: header
+                    })
+                        .map(function (res) { return res.json(); });
+                };
+                ;
+                HTTPTestService.prototype.getUsersByPromise = function () {
+                    return this._http.get("http://jsonplaceholder.typicode.com/users")
+                        .toPromise()
+                        .then(function (res) { return res.json(); });
+                };
+                HTTPTestService = __decorate([
+                    core_1.Injectable(), 
+                    __metadata('design:paramtypes', [http_1.Http])
+                ], HTTPTestService);
+                return HTTPTestService;
+            }());
+            exports_1("HTTPTestService", HTTPTestService);
+        }
+    }
+});
+//# sourceMappingURL=http-test.service.js.map

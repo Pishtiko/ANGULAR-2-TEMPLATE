@@ -4,6 +4,8 @@
   "scripts": {
     "lite": "lite-server",
     "start": "concurrent \"npm run lite\" ",
+    "tsc": "tsc --outDir app",
+    "tscw": "tsc -w --outDir app",
     "typings": "typings",
     "postinstall": "typings install"
   },
